@@ -1,0 +1,10 @@
+.vs/
+.vscode/
+.idea/
+[Aa]rtifacts/
+[Pp]ackages/
+[Pp]ublish/
+[Bb]in/
+[Oo]bj/
+
+*.user
