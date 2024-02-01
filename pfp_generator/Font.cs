@@ -37,7 +37,7 @@ public static class Font
             for (var x = 0; x < 8; x++)
             {
               var color = image.GetPixel(baseX + x, baseY + y);
-              sb.Append(color.ToArgb() == Color.White.ToArgb() ? '.' : '#');
+              sb.Append(color.ToArgb() != Color.Black.ToArgb() ? '.' : '#');
             }
             list2.Add(sb.ToString());
           }

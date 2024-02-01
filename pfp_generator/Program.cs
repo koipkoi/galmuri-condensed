@@ -30,7 +30,7 @@ public static class Program
   {
     try
     {
-      var index = 0xE000;
+      var index = 0xEA00;
       var glyphs = new JsonArray();
       GenerateGlyphs(ref index, glyphs);
       GenerateComponents(glyphs);

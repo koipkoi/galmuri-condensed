@@ -4770,32 +4770,41 @@ public sealed class HangulStrategy
 
   public static readonly HangulStrategy[] STRATEGIES =
   [
-    new(0, (cho, jung, jong) => ContainsJung(jung, 일반모음) && jong == 0),
-    new(1, (cho, jung, jong) => ContainsJung(jung, 넓은모음) && jong == 0),
-    new(2, (cho, jung, jong) => ContainsJung(jung, "ㅘ", "ㅚ", "ㅢ") && jong == 0),
-    new(3, (cho, jung, jong) => ContainsJung(jung, "ㅙ") && jong == 0),
-    new(4, (cho, jung, jong) => ContainsJung(jung, "ㅝ", "ㅟ") && jong == 0),
-    new(5, (cho, jung, jong) => ContainsJung(jung, "ㅞ") && jong == 0),
+  /* 가 갸 거 겨 기 */ new(0, (cho, jung, jong) => ContainsJung(jung, 일반모음) && jong == 0),
+  /* 개 게 걔 계 */ new(1, (cho, jung, jong) => ContainsJung(jung, 넓은모음) && jong == 0),
 
-    new(7, (cho, jung, jong) => ContainsJung(jung, 일반모음) && jong > 0 && !ContainsJong(jong, 넓은종성)),
-    new(8, (cho, jung, jong) => ContainsJung(jung, 일반모음) && jong > 0 && ContainsJong(jong, 넓은종성)),
-    new(9,  (cho, jung, jong) => ContainsJung(jung, 넓은모음) && jong > 0 && !ContainsJong(jong, 넓은종성)),
-    new(10, (cho, jung, jong) => ContainsJung(jung, 넓은모음) && jong > 0 && ContainsJong(jong, 넓은종성)),
-    new(11, (cho, jung, jong) => ContainsJung(jung, "ㅘ", "ㅚ", "ㅢ") && jong > 0 && !ContainsJong(jong, 넓은종성)),
-    new(12, (cho, jung, jong) => ContainsJung(jung, "ㅘ", "ㅚ", "ㅢ") && jong > 0 && ContainsJong(jong, 넓은종성)),
-    new(13, (cho, jung, jong) => ContainsJung(jung, "ㅙ") && jong > 0 && !ContainsJong(jong, 넓은종성)),
-    new(14, (cho, jung, jong) => ContainsJung(jung, "ㅙ") && jong > 0 && ContainsJong(jong, 넓은종성)),
-    new(15, (cho, jung, jong) => ContainsJung(jung, "ㅝ", "ㅟ") && jong > 0 && !ContainsJong(jong, 넓은종성)),
-    new(16, (cho, jung, jong) => ContainsJung(jung, "ㅝ", "ㅟ") && jong > 0 && ContainsJong(jong, 넓은종성)),
-    new(17, (cho, jung, jong) => ContainsJung(jung, "ㅞ") &&  jong > 0 &&!ContainsJong(jong, 넓은종성)),
-    new(18, (cho, jung, jong) => ContainsJung(jung, "ㅞ") && jong > 0 && ContainsJong(jong, 넓은종성)),
+  /* 과 괴 긔 */ new(2, (cho, jung, jong) => ContainsJung(jung, "ㅘ", "ㅚ", "ㅢ") && jong == 0),
+  /* 괘 */ new(3, (cho, jung, jong) => ContainsJung(jung, "ㅙ") && jong == 0),
 
-    new(21, (cho, jung, jong) => ContainsJung(jung, "ㅗ", "ㅛ", "ㅡ") && jong == 0),
-    new(22, (cho, jung, jong) => ContainsJung(jung, "ㅜ", "ㅠ") && jong == 0),
-    new(23, (cho, jung, jong) => ContainsJung(jung, "ㅗ", "ㅛ", "ㅡ") && jong > 0 && !ContainsJong(jong, 넓은종성)),
-    new(24, (cho, jung, jong) => ContainsJung(jung, "ㅗ", "ㅛ", "ㅡ") && jong > 0 && ContainsJong(jong, 넓은종성)),
-    new(25, (cho, jung, jong) => ContainsJung(jung, "ㅜ", "ㅠ") && jong > 0 && !ContainsJong(jong, 넓은종성)),
-    new(26, (cho, jung, jong) => ContainsJung(jung, "ㅜ", "ㅠ") && jong > 0 && ContainsJong(jong, 넓은종성)),
+  /* 궈 귀 */ new(4, (cho, jung, jong) => ContainsJung(jung, "ㅝ", "ㅟ") && jong == 0),
+  /* 궤 궤 */ new(5, (cho, jung, jong) => ContainsJung(jung, "ㅞ") && jong == 0),
+
+  /* 각 갹 걱 격 긱 */ new(7, (cho, jung, jong) => ContainsJung(jung, 일반모음) && jong > 0 && !ContainsJong(jong, 넓은종성)),
+  /* 갈 걀 걸 결 길 */ new(8, (cho, jung, jong) => ContainsJung(jung, 일반모음) && jong > 0 && ContainsJong(jong, 넓은종성)),
+
+  /* 객 겍 걕 곅 */ new(9,  (cho, jung, jong) => ContainsJung(jung, 넓은모음) && jong > 0 && !ContainsJong(jong, 넓은종성)),
+  /* 갤 겔 걜 곌 */ new(10, (cho, jung, jong) => ContainsJung(jung, 넓은모음) && jong > 0 && ContainsJong(jong, 넓은종성)),
+
+  /* 곽 괵 긕 */ new(11, (cho, jung, jong) => ContainsJung(jung, "ㅘ", "ㅚ", "ㅢ") && jong > 0 && !ContainsJong(jong, 넓은종성)),
+  /* 괄 괼 긜 */ new(12, (cho, jung, jong) => ContainsJung(jung, "ㅘ", "ㅚ", "ㅢ") && jong > 0 && ContainsJong(jong, 넓은종성)),
+
+  /* 괙 */ new(13, (cho, jung, jong) => ContainsJung(jung, "ㅙ") && jong > 0 && !ContainsJong(jong, 넓은종성)),
+  /* 괠 */ new(14, (cho, jung, jong) => ContainsJung(jung, "ㅙ") && jong > 0 && ContainsJong(jong, 넓은종성)),
+
+  /* 궉 귁 */ new(15, (cho, jung, jong) => ContainsJung(jung, "ㅝ", "ㅟ") && jong > 0 && !ContainsJong(jong, 넓은종성)),
+  /* 궐 귈 */ new(16, (cho, jung, jong) => ContainsJung(jung, "ㅝ", "ㅟ") && jong > 0 && ContainsJong(jong, 넓은종성)),
+
+  /* 궥 */ new(17, (cho, jung, jong) => ContainsJung(jung, "ㅞ") &&  jong > 0 &&!ContainsJong(jong, 넓은종성)),
+  /* 궬 */ new(18, (cho, jung, jong) => ContainsJung(jung, "ㅞ") && jong > 0 && ContainsJong(jong, 넓은종성)),
+
+  /* 고 교 그 */ new(21, (cho, jung, jong) => ContainsJung(jung, "ㅗ", "ㅛ", "ㅡ") && jong == 0),
+  /* 구 규  */ new(22, (cho, jung, jong) => ContainsJung(jung, "ㅜ", "ㅠ") && jong == 0),
+
+  /* 곡 굑 극 */ new(23, (cho, jung, jong) => ContainsJung(jung, "ㅗ", "ㅛ", "ㅡ") && jong > 0 && !ContainsJong(jong, 넓은종성)),
+  /* 골 굘 글 */ new(24, (cho, jung, jong) => ContainsJung(jung, "ㅗ", "ㅛ", "ㅡ") && jong > 0 && ContainsJong(jong, 넓은종성)),
+
+  /* 국 귝 */ new(25, (cho, jung, jong) => ContainsJung(jung, "ㅜ", "ㅠ") && jong > 0 && !ContainsJong(jong, 넓은종성)),
+  /* 굴 귤 */ new(26, (cho, jung, jong) => ContainsJung(jung, "ㅜ", "ㅠ") && jong > 0 && ContainsJong(jong, 넓은종성)),
   ];
 
   public int Index { get; private set; }
