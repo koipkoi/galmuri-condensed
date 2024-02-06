@@ -4766,7 +4766,7 @@ public sealed class HangulStrategy
 {
   private static readonly string[] 일반모음 = ["ㅏ", "ㅑ", "ㅓ", "ㅕ", "ㅣ"];
   private static readonly string[] 넓은모음 = ["ㅐ", "ㅔ", "ㅒ", "ㅖ"];
-  private static readonly string[] 넓은종성 = ["ㅂ", "ㅄ", "ㄹ", "ㄺ", "ㄻ", "ㄼ", "ㄽ", "ㄾ", "ㄿ", "ㅀ", "ㅌ"];
+  private static readonly string[] 넓은종성 = ["ㅂ", "ㅄ", "ㅆ", "ㅈ", "ㅉ", "ㅊ", "ㄹ", "ㄺ", "ㄻ", "ㄼ", "ㄽ", "ㄾ", "ㄿ", "ㅀ", "ㅌ"];
 
   public static readonly HangulStrategy[] STRATEGIES =
   [
