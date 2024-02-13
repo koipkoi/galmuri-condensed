@@ -105,7 +105,7 @@ public static class Program
   private static void GenerateComponents(JsonArray glyphs)
   {
     var index = 0;
-    foreach (var code in Hangul.UNICODE_2350)
+    Hangul.ForEachHangulCode(code =>
     {
       var choId = Hangul.CHO_TABLE[code];
       var jungId = Hangul.JUNG_TABLE[code];
@@ -123,13 +123,13 @@ public static class Program
       glyphs.Add(
         new JsonObject
         {
-          ["name"] = Hangul.CHARACTERS_2350[index],
+          ["name"] = ((char)code).ToString(),
           ["unicode"] = code,
           ["components"] = components,
         }
       );
 
       index++;
-    }
+    });
   }
 }
