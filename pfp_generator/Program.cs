@@ -8,12 +8,17 @@ namespace pfp_generator;
 
 public static class Program
 {
+  static readonly bool DEBUG = true;
+
   public static int Main(string[] args)
   {
-    if (!Font.Initialize(args.Length == 1 ? args[0] : "../../../../imgs/7x9.png"))
+    if (!DEBUG)
     {
-      Console.WriteLine("자소 이미지 로딩 실패");
-      return -1;
+      if (!Font.Initialize(args.Length == 1 ? args[0] : "../../../../imgs/7x9.png"))
+      {
+        Console.WriteLine("자소 이미지 로딩 실패");
+        return -1;
+      }
     }
 
     if (!TryWirteOutput())
@@ -71,6 +76,9 @@ public static class Program
 
   private static void GenerateGlyphs(ref int index, JsonArray glyphs)
   {
+    if (DEBUG)
+      return;
+
     var list = new List<List<List<List<string>>>>
     {
       Font.Cho,
